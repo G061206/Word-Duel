@@ -4,9 +4,16 @@ import Lobby from './Lobby';
 import Game from './Game';
 import './index.css';
 
-// Initialize socket outside component to avoid reconnects
-// For MVP, hardcoded URL. In production, use env or relative path.
-const socket = io('http://localhost:3000');
+// Initialize socket
+// When served by Nginx (same origin) or proxy, relative path works best.
+// But Vite dev server is on 5173, backend on 3000.
+// We need a conditional or just rely on proxy in dev too (vite.config proxy)?
+// For Docker (Nginx), relative path "/" works because Nginx proxies /socket.io
+// For Dev, we'll need to configure Vite Proxy or keep localhost.
+// Let's use window.location.hostname logic or just "/" if we add Vite proxy.
+// Simplest: defaults to "/" which works for Nginx. For local dev, we update vite.config.
+const socket = io();
+
 
 function App() {
   const [gameState, setGameState] = useState(null);

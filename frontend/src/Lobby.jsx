@@ -40,8 +40,10 @@ export default function Lobby({ socket, joinedRoomCode, setJoinedRoomCode }) {
 
         try {
             setStatus('Uploading...');
-            await axios.post(`http://localhost:3000/upload/${joinedRoomCode}`, formData);
+            // Use relative path, handled by Nginx proxy or Vite proxy
+            await axios.post(`/upload/${joinedRoomCode}`, formData);
             setStatus('Upload Successful!');
+
         } catch (e) {
             setStatus('Upload Failed');
             console.error(e);
