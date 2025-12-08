@@ -1,0 +1,153 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    background: #333;
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: space-between;
+}
+
+.opponent-area {
+    border-bottom: 2px solid #555;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 8px;
+}
+
+.player-area {
+    border-top: 2px solid #555;
+    padding: 20px;
+    background: #2a2a2a;
+    border-radius: 8px;
+}
+
+.battle-area {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pressure-bar {
+    display: flex;
+    gap: 5px;
+    margin: 10px 0;
+    justify-content: center;
+}
+
+.pressure-slot {
+    width: 20px;
+    height: 30px;
+    background: #444;
+    border: 1px solid #666;
+}
+
+.pressure-slot.filled {
+    background: #ff4444;
+}
+
+.hand {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.hand-card {
+    border: 1px solid #646cff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #222;
+    min-width: 100px;
+}
+
+.hand-card:hover {
+    background: #333;
+}
+
+.question-modal {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #646cff;
+    width: 80%;
+    max-width: 500px;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    background: #444;
+    text-align: left;
+}
+
+.option-btn:hover {
+    background: #555;
+}

@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+    restart: always
+
+# Frontend will be added here later, or run locally for now.
+#  frontend:
+#    build: ./frontend
+#    ports:
+#      - "5173:5173"
